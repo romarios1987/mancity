@@ -35,10 +35,10 @@ class Header extends Component {
                     </div>
 
                     <Link to="/the_team">
-                        <Button color="secondary">The team</Button>
+                        <Button color="inherit">The team</Button>
                     </Link>
                     <Link to="/the_matches">
-                        <Button color="secondary">Matches</Button>
+                        <Button color="inherit">Matches</Button>
                     </Link>
                 </Toolbar>
             </AppBar>
