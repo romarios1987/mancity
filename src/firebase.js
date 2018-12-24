@@ -12,11 +12,17 @@ const config = {
     messagingSenderId: "623076967158"
 };
 
-
 firebase.initializeApp(config);
 
 const firebaseDb = firebase.database();
 
-firebaseDb.ref('matches').once('value').then((snapshot) => {
-    console.log(snapshot.val());
-});
+// firebaseDb.ref('matches').once('value').then((snapshot) => {
+//     console.log(snapshot.val());
+// });
+
+const firebaseMatches = firebaseDb.ref('matches');
+
+export {
+    firebase,
+    firebaseMatches
+}
