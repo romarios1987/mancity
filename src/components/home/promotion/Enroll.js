@@ -101,8 +101,6 @@ class Enroll extends Component {
         formError: true
       })
     }
-
-
   }
 
   render() {
