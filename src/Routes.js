@@ -1,21 +1,26 @@
 import React from 'react';
 import Layout from "./components/hoc/Layout";
-import {Switch, Route} from 'react-router-dom';
+import {Switch} from 'react-router-dom';
 
 import Home from "./components/home";
 import Login from "./components/login";
 
 import Dashboard from "./components/admin/Dashboard";
+import PrivateRoute from "./components/authRoutes/PrivateRoute";
+import PublicRoute from "./components/authRoutes/PublicRoute";
 
 
 const Routes = (props) => {
-
+  // console.log(props);
   return (
         <Layout>
           <Switch>
-            <Route exact component={Dashboard} path='/dashboard'/>
-            <Route exact component={Login} path='/login'/>
-            <Route exact component={Home} path='/'/>
+
+            <PrivateRoute {...props} path="/dashboard" exact component={Dashboard}/>
+
+            <PublicRoute {...props} restricted={true} path="/login" exact component={Login}/>
+            <PublicRoute {...props} restricted={false} path="/" exact component={Home}/>
+
           </Switch>
         </Layout>
 
